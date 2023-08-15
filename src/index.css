@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 :root {
   /* Light Theme */
@@ -20,15 +20,14 @@
   --clr-Bright-Blue: hsl(220, 98%, 61%);
 
   /** Dark theme */
-  background-color: var(--clr-Very-Dark-Blue);
+  background-color: var(--clr-Very-Dark-Blue)
 }
 
 html {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--clr--Light-Gray);
-
 }
 
 body {
@@ -40,4 +39,4 @@ body {
 /** Light theme */
 #light {
   background-color: var(--clr-Very-Light-Grayish-Blue);
-};
+}

@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  /* Light Theme */
+  --clr-Very-Light-Gray: hsl(0, 0%, 98%);
+  --clr-Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --clr-Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --clr-Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --clr-Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+  --clr-Very-Dark-Blue: hsl(235, 21%, 11%);
+  --clr-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --clr-Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --clr-Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --clr-Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --clr-Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --clr-Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
+
+  --clr-Bright-Blue: hsl(220, 98%, 61%);
+
+  /** Dark theme */
+  background-color: var(--clr-Very-Dark-Blue);
+}
+
+html {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--clr--Light-Gray);
+
+}
+
+body {
+  margin: 0 auto;
+  min-width: 390px;
+  min-height: 100vh;
+}
+
+/** Light theme */
+#light {
+  background-color: var(--clr-Very-Light-Grayish-Blue);
+};

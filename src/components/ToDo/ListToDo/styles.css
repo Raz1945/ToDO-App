@@ -1,0 +1,24 @@
+.list__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+  padding-inline: 1rem;
+  background-color: var(--clr-Very-Light-Gray);
+  position: relative;
+  top: -100px;
+  width: 38vw;
+}
+#light .list__container {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+#dark .list__container {
+  background-color: var(--clr-Very-Dark-Desaturated-Blue);
+  color: var(--clr-Light-Grayish-Blue);
+}
+
+@media (max-width: 390px) {
+  .list__container {
+    top: -200px;
+  }
+}

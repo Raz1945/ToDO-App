@@ -1,0 +1,71 @@
+.list__ToDo_container {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  grid-template-areas: "mark-content cross";
+  
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding-block: 0.1rem;
+  padding-inline: 1rem;
+  width: 100%;
+}
+#light .list__ToDo_container {
+  background-color: var(--clr-Very-Light-Gray);
+  border-bottom: 1px solid var(--clr-Light-Grayish-Blue);
+}
+#dark .list__ToDo_container {
+  background-color: var(--clr-Very-Dark-Desaturated-Blue);
+  border-bottom: 1px solid var(--clr-Dark-Grayish-Blue);
+}
+
+.list__ToDo_content {
+  grid-area: "mark-content";
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+}
+.button-mark {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: 0.25s ease-in-out;
+}
+
+#light .button-mark{
+  color: var(--clr-Dark-Grayish-Blue);
+}
+#light .button-mark:hover {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+  transform: scale(1.3);
+}
+#dark .button-mark{
+  color: var(--clr-Light-Grayish-Blue);
+}
+#dark  .button-mark:hover {
+  color: var(--clr-Light-Grayish-Blue-hover);
+  transform: scale(1.3);
+}
+
+@media (max-width: 426px) {
+  .list__container {
+    width: 80vw;
+  }
+}
+@media (max-width: 376px) {
+  .list__container {
+    width: 80vw;
+  }
+}

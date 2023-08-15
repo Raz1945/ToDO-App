@@ -1,0 +1,103 @@
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  
+  background-color: var(--clr-Very-Light-Gray);
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+
+  position: relative;
+  top: -100px;
+  width: 38vw;
+}
+#light .footer__container {
+  background-color: var(--clr-Very-Light-Gray);
+}
+#dark .footer__container {
+  background-color: var(--clr-Very-Dark-Desaturated-Blue);
+}
+
+.filters__item_left {
+  color: var(--clr-Dark-Grayish-Blue);
+  font-size: 12px;
+  
+}
+
+.clear__button {
+  font-size: 12px;
+  color: var(--clr-Dark-Grayish-Blue);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: 0.25s ease-in-out;
+}
+.clear__button:hover {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+.clear__button:focus,
+.clear__button:focus-visible {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+
+/*  Filtros  */
+.filters__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38vw;
+  position: absolute;
+  left: 0.5px;
+}
+
+.filter__button {
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: 0.25s ease-in-out;
+}
+.filter__button:hover {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+.filter__button:focus,
+.filter__button:focus-visible {
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+
+/* VER!! */
+.text {
+  color: var(--clr-Dark-Grayish-Blue);
+}
+.text-active {
+  color: var(--clr-Bright-Blue);
+}
+
+/* MediaQuery */
+@media (max-width: 390px) {
+  .footer__container {
+    width: 80%;
+    position: relative;
+    top: -200px;
+  }
+
+  .filters__container {
+    gap: 1.5rem;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: -0.5px;
+    padding-block: 1rem;
+    background-color: var(--clr-Very-Light-Gray);
+    border-radius: 7px;
+  }
+  #light .filters__container {
+    background-color: var(--clr-Very-Light-Gray);
+  }
+  #dark .filters__container {
+    background-color: var(--clr-Very-Dark-Desaturated-Blue);
+  }
+}

@@ -1,6 +1,6 @@
 import './styles.css'
 import { useState } from "react";
-import { RxCross1 } from 'react-icons/Rx'
+import { RxCross1 } from 'react-icons/rx'
 
 const LabelToDo = ({ text, theme, deleteToDo, id }) => {
   const [showIcon, setShowIcon] = useState(false);

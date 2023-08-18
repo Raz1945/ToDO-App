@@ -1,0 +1,56 @@
+.check {
+  width: max-content;
+}
+
+#light .check__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-Light-Grayish-Blue);
+  cursor: pointer;
+}
+#dark .check__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-Very-Dark-Grayish-Blue-2);
+  cursor: pointer;
+}
+
+.bg-check {
+  background: rgb(87, 221, 255);
+  background: -moz-linear-gradient(
+    145deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    145deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+  background: linear-gradient(
+    145deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#57ddff",endColorstr="#c058f3",GradientType=1);
+}
+.check-icon {
+  width: 9px;
+  height: 9px;
+  stroke: none;
+  fill: none;
+}
+
+.checked path {
+  stroke: #fafafa;
+  stroke-width: 2;
+  fill: none;
+}

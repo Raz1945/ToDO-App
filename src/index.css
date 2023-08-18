@@ -18,9 +18,6 @@
   --clr-Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 
   --clr-Bright-Blue: hsl(220, 98%, 61%);
-
-  /** Dark theme */
-  background-color: var(--clr-Very-Dark-Blue)
 }
 
 html {
@@ -40,3 +37,12 @@ body {
 #light {
   background-color: var(--clr-Very-Light-Grayish-Blue);
 }
+
+
+  /** Dark theme */
+#dark{
+  background-color: var(--clr-Very-Dark-Blue)
+
+}
+
+

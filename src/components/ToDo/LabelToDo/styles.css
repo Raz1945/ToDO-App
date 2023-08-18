@@ -1,7 +1,7 @@
 .list__ToDo_container {
   display: grid;
-  grid-template-columns: 11fr 1fr;
-  grid-template-areas: "mark-content cross";
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas: "check mark-content cross";
   
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -18,13 +18,20 @@
   border-bottom: 1px solid var(--clr-Dark-Grayish-Blue);
 }
 
+.list__ToDo_check{
+  grid-area: check;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 .list__ToDo_content {
-  grid-area: "mark-content";
+  grid-area: mark-content;
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  gap: 1.5rem;
+  padding-inline-start: 0.5rem
 }
 
 .button-container{
@@ -34,6 +41,7 @@
 
 }
 .button-mark {
+  grid-area: cross;
   display: flex;
   align-items: center;
   justify-content: end;

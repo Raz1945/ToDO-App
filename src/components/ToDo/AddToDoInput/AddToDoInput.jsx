@@ -1,6 +1,6 @@
-import './styles.css'
-import './styles.css'
 import { useState } from 'react';
+import CheckButton from '../CheckButton/CheckButton';
+import './styles.css'
 
 // AddToDoInput --> proporciona una etiqueta y un campo de entrada para que los usuarios agreguen nuevas tarea 
 const AddToDoInput = ({ theme, addToDo }) => {
@@ -22,7 +22,7 @@ const AddToDoInput = ({ theme, addToDo }) => {
     <div className='addToDoWrap'>
       <div className={`addToDoWrap-context ${theme}`}>
         <label htmlFor="addToDo" className="addToDo__control">
-          <input type="checkbox" disabled />
+          <CheckButton status='check-icon' />
           <input
             type="text"
             id="addToDo"
@@ -30,7 +30,7 @@ const AddToDoInput = ({ theme, addToDo }) => {
             className="addToDo__text"
             value={toDoContent}
             onChange={handleToDoInput}
-            onKeyDown={handleToDoEnter} 
+            onKeyDown={handleToDoEnter}
           />
         </label >
       </div>

@@ -9,10 +9,10 @@ export const ListToDo = ({ tasks, theme, deleteToDo }) => {
         return (
           <LabelToDo
             key={todo.id}
-            text={todo.content}
             theme={theme}
-            deleteToDo={deleteToDo}
             id={todo.id}
+            text={todo.content}
+            deleteToDo={deleteToDo}
           />
         )
       })}

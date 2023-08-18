@@ -2,31 +2,31 @@ export const todos = [
   {
     id: 1,
     content: "Tomar agua",
-    completed: true,
+    checked: false,
   },
   {
     id: 2,
     content: "Finalizar práctica de estados y props",
-    completed: false,
+    checked: false,
   },
   {
     id: 3,
     content: "Tomar agua de nuevo",
-    completed: false,
+    checked: false,
   },
   {
     id: 4,
     content: "Compartir lo aprendido con algún compañero",
-    completed: false,
+    checked: false,
   },
   {
     id: 5,
     content: "Probar pizza italiana",
-    completed: false,
+    checked: false,
   },
   {
     id: 6,
-    content: "Completar el desafío del sprint 5",
-    completed: false,
+    content: "Completar el desafío del sprint 6",
+    checked: false,
   },
 ];

@@ -1,8 +1,8 @@
 import { useState, createContext } from "react";
-import Header from "./Header/Header";
-import AppWrap from "./AppWrap/AppWrap";
-import AddToDoInput from "./ToDo/AddToDoInput/AddToDoInput";
 import { todos } from "../data/todos";
+import AppWrap from "./AppWrap/AppWrap";
+import Header from "./Header/Header";
+import AddToDoInput from "./ToDo/AddToDoInput/AddToDoInput";
 import { ListToDo } from "./ToDo/ListToDo/ListToDo";
 import FilterToDo from "./ToDo/FilterToDo/FIlterToDo";
 
@@ -16,10 +16,10 @@ const App = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-
   // Agrega una nueva tarea
   const addToDo = (content) => {
     const lastId = toDos.length > 0 ? toDos[toDos.length - 1].id : 1;
+
     const regex = /^\s*$/; // Expresión regular para verificar espacios en blanco 
 
     if (regex.test(content)) {
@@ -28,12 +28,14 @@ const App = () => {
     const newToDo = {
       id: lastId + 1,
       content,
-      completed: false
+      checked: false
     };
 
     const toDoList = [...toDos];
     toDoList.push(newToDo);
     // console.log('Nueva tarea creada:',newToDo) //? Verifico que se ingresa una nueva tarea
+    // console.log('la cantidad actual es:',toDoList) //? Verifico que la cantidad de tareas
+
     setToDos(toDoList);
 
   };
@@ -48,12 +50,10 @@ const App = () => {
     <>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <AppWrap theme={theme}>
-
           <Header theme={theme} setTheme={toggleTheme} />
           <AddToDoInput theme={theme} addToDo={addToDo} />
-          <ListToDo tasks={toDos} theme={theme} deleteToDo={deleteToDo} />
-          <FilterToDo theme={theme}/>
-
+          <ListToDo theme={theme} tasks={toDos} deleteToDo={deleteToDo} />
+          <FilterToDo theme={theme} tasks={toDos} />
         </AppWrap>
       </ThemeContext.Provider>
     </>

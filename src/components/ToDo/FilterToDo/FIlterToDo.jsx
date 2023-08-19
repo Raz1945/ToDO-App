@@ -4,37 +4,27 @@ import ItemLeft from "./components/ItemLeft";
 import ItemRight from "./components/ItemRight";
 import './styles.css'
 
-const FilterToDo = ({ theme, tasks }) => {
-  const [showCompleted, setShowCompleted] = useState(false);
+const FilterToDo = ({ theme, tasks, onClickAll, onClickIncompleted, onClickCompleted, OnClickClear }) => {
 
+  // Contador de tareas
   const Counter = () => {
     return tasks.length;
   };
 
-  const onClickCompleted = () => {
-    const checkedToDos = tasks.filter(todo => todo.checked);
-    console.log('tareas finalizadas:');
-
-    checkedToDos.forEach(task => {
-      console.log(`ID: ${task.id}, Content: ${task.content}`);
-    });
-
-    setShowCompleted(true);
-  };
-
+  const filterActive = () => {
+  }
 
   return (
     <div className={`footer__container ${theme}`}>
       <ItemLeft counter={Counter} />
 
       <div className="filters__container">
-        <FilterButton action={() => {}}  filter='All' active='All' />
-        <FilterButton action={() => {}} filter='Active' />
-        <FilterButton action={onClickCompleted} filter='Completed' />
-
+        <FilterButton action={onClickAll} filter='All' active={filterActive} />
+        <FilterButton action={onClickIncompleted} filter='Active' active={filterActive} />
+        <FilterButton action={onClickCompleted} filter='Completed' active={filterActive} />
       </div>
 
-      <ItemRight />
+      <ItemRight action={OnClickClear} />
     </div>
   );
 }

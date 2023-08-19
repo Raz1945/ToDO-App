@@ -1,11 +1,12 @@
 import './styles.css'
 import { useState } from "react";
-import { RxCross1 } from 'react-icons/rx'
 import CheckButton from '../CheckButton/CheckButton';
+import LabelToDoText from './components/LabelToDo.Text';
+import LabelToDoWrap from './components/LabelToDo.Wrap';
+import { RxCross1 } from 'react-icons/rx'
 
-const LabelToDo = ({ text, theme, deleteToDo, id }) => {
+const LabelToDo = ({ text, theme, deleteToDo, updateToDo, id, status }) => {
   const [showIcon, setShowIcon] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
 
   const handleMouseEnter = () => {
     setShowIcon(true);
@@ -14,44 +15,32 @@ const LabelToDo = ({ text, theme, deleteToDo, id }) => {
     setShowIcon(false);
   };
 
+  // Maneja el cambio de status de las tareas
   const handleCheckClick = () => {
-    setIsChecked(!isChecked);
+     updateToDo(id)
   };
 
-  const checkboxClass = isChecked ? 'check-icon checked' : 'check-icon';
-  const checkboxBgClass = isChecked ? 'check__container bg-check' : 'check__container';
+  const checkboxClass = status ? 'check-icon checked' : 'check-icon';
+  const checkboxBgClass = status ? 'check__container bg-check' : 'check__container';
 
 
   return (
-    <div
-      className="list__ToDo_container"
-      id={theme}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <LabelToDoWrap enter={handleMouseEnter} leave={handleMouseLeave} theme={theme} >
       <div className='list__ToDo_check'>
-        <CheckButton
-          statusBg={checkboxBgClass}
-          status={checkboxClass}
-          onClick={handleCheckClick}
-        />
+        <CheckButton statusClass={checkboxClass} statusClassBg={checkboxBgClass} onClick={handleCheckClick} />
       </div>
 
-      <div className="list__ToDo_content">
-        <p className="list__ToDo_text">{text}</p>
-      </div>
+      <LabelToDoText text={text} />
 
       {(showIcon) && (
         <div className='button-container'>
-          <button className="button-mark">
-            <RxCross1
-              size={15}
-              onClick={() => deleteToDo(id)}
-            />
+          <button className="button-mark" onClick={() => deleteToDo(id)} >
+            <RxCross1 size={15} />
           </button>
         </div>
       )}
-    </div>
+
+    </LabelToDoWrap>
   );
 };
 

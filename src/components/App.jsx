@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { todos } from "../data/todos";
 import AppWrap from "./AppWrap/AppWrap";
 import Header from "./Header/Header";
@@ -11,6 +11,9 @@ export const ThemeContext = createContext(null)
 const App = () => {
   const [theme, setTheme] = useState('light')
   const [toDos, setToDos] = useState(todos)
+  const [newTask, setNewTask] = useState([]); // Estado para almacenar datos actualizados
+  const [, setShowCompleted] = useState(false);
+  const [, setShowIncompleted] = useState(false);
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -28,23 +31,73 @@ const App = () => {
     const newToDo = {
       id: lastId + 1,
       content,
-      checked: false
+      status: false
     };
 
     const toDoList = [...toDos];
     toDoList.push(newToDo);
     // console.log('Nueva tarea creada:',newToDo) //? Verifico que se ingresa una nueva tarea
     // console.log('la cantidad actual es:',toDoList) //? Verifico que la cantidad de tareas
-
     setToDos(toDoList);
-
   };
 
   // Eliminar una tarea especifica
   const deleteToDo = (id) => {
-    const updatedToDos = toDos.filter(todo => todo.id !== id);
+    const deletetask = toDos.filter(todo => todo.id !== id);
+    setToDos(deletetask);
+  };
+
+  // Cambia el status de una tarea especifica
+  const updateToDo = (id) => {
+    const updatedToDos = toDos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          status: !todo.status
+        };
+      }
+      return todo;
+    });
+    // console.log('Cambio el estado de:',id) //? Verifico que cambie correctamente el estado
     setToDos(updatedToDos);
   };
+
+  // Almacenar los datos en el estado
+  const handleNewTask = (toDos) => {
+    setNewTask(toDos);
+  };
+
+  // Todas las tareas
+  const onClickAll = () => {
+    handleNewTask(toDos);
+    setShowCompleted(false); // Me aseguro de que no se muestren las tareas completadas
+    setShowIncompleted(false); // Me aseguro de que no se muestren las tareas incompletas
+  };
+
+  // Tareas Completadas
+  const onClickCompleted = () => {
+    const newTask = toDos.filter((todo) => todo.status);
+    handleNewTask(newTask);
+    setShowCompleted(true);
+  };
+
+  // Tareas Incompletas osea Activas
+  const onClickIncompleted = () => {
+    const newTask = toDos.filter((todo) => !todo.status);
+    handleNewTask(newTask);
+    setShowIncompleted(true);
+  };
+
+  const OnClickClear = () => {
+    const toDelete = toDos.filter((todo) => !todo.status)
+    console.log('tareas eliminadas con exito')
+    setToDos(toDelete)
+
+  }
+  // Renderiza cada vez que toDos sea cambiado
+  useEffect(() => {
+    handleNewTask(toDos);
+  }, [toDos])
 
   return (
     <>
@@ -52,8 +105,14 @@ const App = () => {
         <AppWrap theme={theme}>
           <Header theme={theme} setTheme={toggleTheme} />
           <AddToDoInput theme={theme} addToDo={addToDo} />
-          <ListToDo theme={theme} tasks={toDos} deleteToDo={deleteToDo} />
-          <FilterToDo theme={theme} tasks={toDos} />
+          <ListToDo theme={theme} tasks={toDos} newTask={newTask} deleteToDo={deleteToDo} updateToDo={updateToDo} />
+
+          <FilterToDo theme={theme} tasks={toDos}
+            onClickAll={onClickAll}
+            onClickIncompleted={onClickIncompleted}
+            onClickCompleted={onClickCompleted}
+            OnClickClear={OnClickClear}
+          />
         </AppWrap>
       </ThemeContext.Provider>
     </>

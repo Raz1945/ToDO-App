@@ -1,4 +1,4 @@
-import { icons } from "../../assets/icons";
+import { icons } from "../../../assets/icons";
 
 const ThemeButton = ({ theme, setTheme }) => {
   return (

@@ -1,6 +1,6 @@
 import './styles.css'
-import Title from './Header.Title';
-import ThemeButton from './Header.themeButton';
+import Title from './components/Header.Title';
+import ThemeButton from './components/Header.themeButton';
 
 const Header = ({ theme, setTheme }) => {
   return (

@@ -22,7 +22,7 @@ const AddToDoInput = ({ theme, addToDo }) => {
     <div className='addToDoWrap'>
       <div className={`addToDoWrap-context ${theme}`}>
         <label htmlFor="addToDo" className="addToDo__control">
-          <CheckButton status='check-icon' />
+          <CheckButton statusClass='check-icon' statusClassBg='check__container' />
           <input
             type="text"
             id="addToDo"

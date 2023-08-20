@@ -34,12 +34,20 @@
   padding-inline-start: 0.5rem
 }
 
+.text__check-check{
+  color: var(--clr-Light-Grayish-Blue);
+  text-decoration: line-through;
+  transition: 0.25s ease-in-out;
+}
+
+
 .button-container{
   display: flex;
   align-items: center;
   justify-content: end;
 
 }
+
 .button-mark {
   grid-area: cross;
   display: flex;

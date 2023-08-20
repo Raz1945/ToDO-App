@@ -20,8 +20,9 @@ const LabelToDo = ({ text, theme, deleteToDo, updateToDo, id, status }) => {
      updateToDo(id)
   };
 
+  const checkboxText = status ? 'text__check-check': 'text__check-normal';
   const checkboxClass = status ? 'check-icon checked' : 'check-icon';
-  const checkboxBgClass = status ? 'check__container bg-check' : 'check__container';
+  const checkboxBgClass = status ? 'check__container bg-check' : 'check__container border';
 
 
   return (
@@ -30,7 +31,7 @@ const LabelToDo = ({ text, theme, deleteToDo, updateToDo, id, status }) => {
         <CheckButton statusClass={checkboxClass} statusClassBg={checkboxBgClass} onClick={handleCheckClick} />
       </div>
 
-      <LabelToDoText text={text} />
+      <LabelToDoText text={text} statusText={checkboxText} />
 
       {(showIcon) && (
         <div className='button-container'>

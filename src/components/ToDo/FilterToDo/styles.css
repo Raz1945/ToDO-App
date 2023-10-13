@@ -12,6 +12,7 @@
   position: relative;
   top: -100px;
   width: 38vw;
+  z-index: 5;
 }
 #light .footer__container {
   background-color: var(--clr-Very-Light-Gray);
@@ -24,6 +25,10 @@
   color: var(--clr-Dark-Grayish-Blue);
   font-size: 12px;
   
+}
+
+.clear__container{
+  z-index: 20;
 }
 
 .clear__button {

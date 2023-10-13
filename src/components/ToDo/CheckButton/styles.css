@@ -5,7 +5,6 @@
   box-shadow:0px 0px 5px 3px rgba(87, 221, 255, .3);
   border-radius: 50%;
 }
-
 #light .check__container {
   display: flex;
   align-items: center;

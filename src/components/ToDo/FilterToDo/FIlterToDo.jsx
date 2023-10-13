@@ -3,15 +3,15 @@ import ItemLeft from "./components/ItemLeft";
 import ItemRight from "./components/ItemRight";
 import './styles.css'
 
-const FilterToDo = ({ theme, tasks, onClickAll, onClickIncompleted, onClickCompleted, OnClickClear, isActive }) => {
+const FilterToDo = ({ theme, Counter, onClickAll, onClickIncompleted, onClickCompleted, OnClickClear, isActive }) => {
 
   // Contador de tareas
-  const Counter = () => {
-    return tasks.length;
-  };
+  // const Counter = () => {
+  //     return tasks.length;
+  // };
 
+  // Verifica qué filtro está activo y devuelve la clase correspondiente.
   const filterActive = () => {
-    // Verifica qué filtro está activo y devuelve la clase correspondiente.
     const activeClass = isActive.all ? 'filterOn' : 'filterOff';
     const activeClassIncompleted = isActive.incompleted ? 'filterOn' : 'filterOff';
     const activeClassCompleted = isActive.completed ? 'filterOn' : 'filterOff';
@@ -23,7 +23,7 @@ const FilterToDo = ({ theme, tasks, onClickAll, onClickIncompleted, onClickCompl
 
   return (
     <div className={`footer__container ${theme}`}>
-      <ItemLeft counter={Counter} />
+      <ItemLeft Counter={Counter} />
 
       <div className="filters__container">
         <FilterButton action={onClickAll} filter='All' active={activeClasses.all} />

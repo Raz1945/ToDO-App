@@ -58,6 +58,12 @@ const App = () => {
     setToDos(updatedToDos);
   };
 
+  // Contador de tareas
+  const Counter = () => {
+    const contador = toDos.filter((todos) => !todos.status).length
+    return contador
+  }
+
   // Almacena los datos en el estado
   const handleNewTask = (toDos) => {
     setNewTask(toDos);
@@ -101,7 +107,9 @@ const App = () => {
           <Header theme={theme} setTheme={toggleTheme} />
           <AddToDoInput theme={theme} addToDo={addToDo} />
           <ListToDo theme={theme} tasks={toDos} newTask={newTask} deleteToDo={deleteToDo} updateToDo={updateToDo} />
-          <FilterToDo theme={theme} tasks={toDos}
+          <FilterToDo
+            theme={theme}
+            Counter={Counter}
             onClickAll={onClickAll}
             onClickIncompleted={onClickIncompleted}
             onClickCompleted={onClickCompleted}

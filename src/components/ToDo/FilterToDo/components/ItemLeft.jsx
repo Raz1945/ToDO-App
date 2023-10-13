@@ -1,9 +1,9 @@
-const ItemLeft = ({ counter }) => {
+const ItemLeft = ({ Counter }) => {
 
   return (
     <div className="item_left__container">
       <p className="filters__item_left">
-        {counter()} items left
+        {Counter()} items left
       </p>
     </div>
   );

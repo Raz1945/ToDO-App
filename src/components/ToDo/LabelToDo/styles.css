@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: start;
+  width: 38vw;
 }
 
 .list__ToDo_content {
@@ -31,7 +32,8 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  padding-inline-start: 0.5rem
+  padding-inline-start: 1rem;
+  width: 38vw;
 }
 
 .text__check-check{
